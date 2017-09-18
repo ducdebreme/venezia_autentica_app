@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg:svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="28.992649"
+   height="29.042978"
+   id="svg2"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="bar-klein.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1570"
+     inkscape:window-height="799"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="10.22135"
+     inkscape:cx="1.5547999"
+     inkscape:cy="14.95171"
+     inkscape:window-x="142"
+     inkscape:window-y="119"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <svg:metadata
+     id="metadata2975">
+    <RDF>
+      <Work
+         about="">
+        <format>image/svg+xml</format>
+        <type
+           resource="http://purl.org/dc/dcmitype/StillImage" />
+        <license
+           resource="http://web.resource.org/cc/PublicDomain" />
+        <language>en</language>
+      </Work>
+    </RDF>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </svg:metadata>
+  <svg:defs
+     id="defs4" />
+  <svg:g
+     id="g1327"
+     transform="matrix(0.05,0,0,0.05,0,-2.22223e-5)">
+    <svg:path
+       d="M 66.275,1.768 C 24.94,1.768 1.704,23.139 1.704,66.804 v 450.123 c 0,40.844 20.894,62.229 62.192,62.229 H 515.92 c 41.307,0 62.229,-20.316 62.229,-62.229 V 66.804 c 0,-42.601 -20.922,-65.036 -63.522,-65.036 -0.003,0 -448.494,-0.143 -448.352,0 z"
+       style="fill:#800080;stroke:#eeeeee;stroke-width:3.40799999"
+       id="path1329"
+       inkscape:connector-curvature="0" />
+  </svg:g>
+  <svg:path
+     d="m 23.41159,4.8964778 h -0.0125 c 0.0143,-0.0124 0.0222,-0.0249 0.0222,-0.0375 0,-0.29685 -4.05335,-0.5375 -9.0535,-0.5375 -5.00009,0 -9.05349,0.24065 -9.05349,0.5375 0,0.0126 0.008,0.0251 0.0223,0.0375 H 5.3143 l 8.02369,7.4267502 v 8.40365 l -5.19809,3.716 h 0.0127 c -0.025,0.0135 -0.0383,0.0272 -0.0383,0.041 0,0.2051 2.79981,0.37125 6.2535,0.37125 3.45375,0 6.25351,-0.16615 6.25351,-0.37125 0,-0.0138 -0.0133,-0.0276 -0.0383,-0.041 h 0.003 l -5.1981,-3.716 v -8.4036 z M 14.6261,10.878428 c -0.14476,0.13395 -0.38155,0.13395 -0.52631,0 L 10.22305,7.2900278 c -0.14475,-0.13395 -0.10181,-0.2436 0.0954,-0.2436 h 8.08895 c 0.1972,0 0.2402,0.1096 0.0954,0.2436 z"
+     style="fill:#ffffff;stroke-width:0.05"
+     id="path2209"
+     inkscape:connector-curvature="0" />
+</svg:svg>
