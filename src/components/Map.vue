@@ -1,7 +1,8 @@
 <template>
   <div class="map">
     <navigation></navigation>    
-    <gmap-map :center="center" :zoom="5">
+    <gmap-map ref="gmap" :center="center" :zoom="14">
+      <gmap-marker :key="index" v-for="(m, index) in places" :icon="'/static/img/bar.svg'" :position="{lat: m.latitude, lng: m.longitude}" :clickable="true" @click="selectCurrentPlace(m)"></gmap-marker>
     </gmap-map>
 
   </div>
@@ -9,20 +10,32 @@
 
 <script>
 import Navigation from '@/components/Navigation'
+let places = require('@/places.json')
 
 export default {
   data () {
     return {
       center: {
-        lat: 0.0, lng: 0.0
-      }
+        lat: 45.438, lng: 12.32588
+      },
+      places
     }
   },
   components: {
     Navigation
   },
+  methods: {
+    selectCurrentPlace (place) {
+      this.$refs.gmap.panTo({lat: place.latitude, lng: place.longitude})
+      console.log(place)
+      // this.center = place.location
+    },
+    locateMe () {
+      this.center = this.$root.currentLocation
+    }
+  },
   mounted () {
-    this.center = this.$root.currentLocation
+    // this.center = this.$root.currentLocation
   }
 }
 </script>
