@@ -1,15 +1,22 @@
 <template>
   <div class="map">
-    <navigation></navigation>    
+    <navigation></navigation>
     <gmap-map ref="gmap" :center="center" :zoom="14">
-      <gmap-marker :key="index" v-for="(m, index) in places" :icon="'/static/img/bar.svg'" :position="{lat: m.latitude, lng: m.longitude}" :clickable="true" @click="selectCurrentPlace(m)"></gmap-marker>
+      <gmap-marker :key="index" v-for="(m, index) in places" :icon="'/static/img/bar.svg'" 
+        :data-marker="index"
+        :position="{lat: m.latitude, lng: m.longitude}" :clickable="true" v-on:click="selectCurrentPlace(m,$event)"></gmap-marker>
     </gmap-map>
+
+    <v-dialog v-model="dialogVisible" transition="dialog-bottom-transition" width="80%">
+      <place-card @close="dialogVisible = false" ></place-card>
+    </v-dialog>
 
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation'
+import PlaceCard from '@/components/PlaceCard'
 let places = require('@/places.json')
 
 export default {
@@ -18,17 +25,24 @@ export default {
       center: {
         lat: 45.438, lng: 12.32588
       },
-      places
+      places,
+      dialogVisible: false
     }
   },
   components: {
-    Navigation
+    Navigation,
+    PlaceCard
   },
   methods: {
     selectCurrentPlace (place) {
+      // add a little display to prevent event propagation
+      let me = this
+      setTimeout(function () { me.dialogVisible = true }, 50)
+
       this.$refs.gmap.panTo({lat: place.latitude, lng: place.longitude})
-      console.log(place)
-      // this.center = place.location
+    },
+    setPlaceDisplay (value) {
+      this.dialogVisible = value
     },
     locateMe () {
       this.center = this.$root.currentLocation
