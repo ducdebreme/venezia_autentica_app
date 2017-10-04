@@ -8,7 +8,7 @@
     </gmap-map>
 
     <v-dialog v-model="dialogVisible" width="80%">
-      <place-card @close="dialogVisible = false" ></place-card>
+      <place-card @close="dialogVisible = false" :place="currentPlace"></place-card>
     </v-dialog>
 
   </div>

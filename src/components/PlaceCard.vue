@@ -1,23 +1,17 @@
 <template>
-  <v-card>
+  <v-card v-if="place != null">
     <v-toolbar dark class="primary">
       <v-btn icon @click.native="closeDialog()" dark>
         <v-icon>close</v-icon>
       </v-btn>
-      <v-toolbar-title>Settings</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn dark flat @click.native="dialog = false">Save</v-btn>
-      </v-toolbar-items>
+      <v-toolbar-title>{{place.name}}</v-toolbar-title>
     </v-toolbar>
-    <v-card-media src="https://vuetifyjs.com/static/doc-images/cards/desert.jpg" height="200px">
+    <v-card-media :src="place.image" height="200px">
     </v-card-media>
-    <v-card-title primary-title>
-      <div>
-        <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-        <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
-      </div>
-    </v-card-title>
+    <v-card-text primary-title>
+      <div v-html="place.description"></div>
+      <div v-html="place.address"></div>
+    </v-card-text>
     <v-card-actions>
       <v-btn flat class="orange--text">Share</v-btn>
       <v-btn flat class="orange--text">Explore</v-btn>
@@ -27,6 +21,9 @@
 
 <script>
 export default {
+  props: {
+    place: Object
+  },
   methods: {
     closeDialog () {
       this.$emit('close')
