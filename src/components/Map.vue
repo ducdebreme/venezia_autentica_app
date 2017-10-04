@@ -4,10 +4,10 @@
     <gmap-map ref="gmap" :center="center" :zoom="14">
       <gmap-marker :key="index" v-for="(m, index) in places" :icon="'/static/img/bar.svg'" 
         :data-marker="index"
-        :position="{lat: m.latitude, lng: m.longitude}" :clickable="true" v-on:click="selectCurrentPlace(m,$event)"></gmap-marker>
+        :position="{lat: m.latitude, lng: m.longitude}" :clickable="true" v-on:click="selectCurrentPlace(m)"></gmap-marker>
     </gmap-map>
 
-    <v-dialog v-model="dialogVisible" transition="dialog-bottom-transition" width="80%">
+    <v-dialog v-model="dialogVisible" width="80%">
       <place-card @close="dialogVisible = false" ></place-card>
     </v-dialog>
 
@@ -26,7 +26,8 @@ export default {
         lat: 45.438, lng: 12.32588
       },
       places,
-      dialogVisible: false
+      dialogVisible: false,
+      currentPlace: null
     }
   },
   components: {
@@ -35,8 +36,10 @@ export default {
   },
   methods: {
     selectCurrentPlace (place) {
-      // add a little display to prevent event propagation
       let me = this
+      me.currentPlace = place
+
+      // add a little delay to prevent event propagation
       setTimeout(function () { me.dialogVisible = true }, 50)
 
       this.$refs.gmap.panTo({lat: place.latitude, lng: place.longitude})
@@ -45,11 +48,11 @@ export default {
       this.dialogVisible = value
     },
     locateMe () {
-      this.center = this.$root.currentLocation
+      this.center = this.$root.currentPlace
     }
   },
   mounted () {
-    // this.center = this.$root.currentLocation
+    // this.center = this.$root.currentPlace
   }
 }
 </script>
